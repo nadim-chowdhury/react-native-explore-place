@@ -1,6 +1,6 @@
 import { View, Text, Dimensions } from "react-native";
 import React, { useContext, useEffect } from "react";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { UserLocationContext } from "@/context/UserLocationContext";
 
 export default function MapViewComponent() {
@@ -25,7 +25,14 @@ export default function MapViewComponent() {
 
   return (
     <View style={{ marginTop: 24 }}>
-      <Text style={{ fontSize: 24, marginBottom: 12, fontWeight: 600 }}>
+      <Text
+        style={{
+          fontSize: 24,
+          marginBottom: 12,
+          fontWeight: 700,
+          fontFamily: "raleway",
+        }}
+      >
         Near By Top Places
       </Text>
       <View
@@ -46,7 +53,9 @@ export default function MapViewComponent() {
           provider={PROVIDER_GOOGLE}
           showsUserLocation={true}
           region={mapRegion}
-        ></MapView>
+        >
+          <Marker title="User" coordinate={mapRegion} />
+        </MapView>
       </View>
     </View>
   );

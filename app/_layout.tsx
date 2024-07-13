@@ -20,7 +20,8 @@ export default function RootLayout() {
 
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/Raleway-Regular.ttw"),
+    raleway: require("../assets/fonts/Raleway-Regular.ttf"),
+    "raleway-bold": require("../assets/fonts/Raleway-SemiBold.ttf"),
   });
 
   useEffect(() => {
