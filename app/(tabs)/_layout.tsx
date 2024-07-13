@@ -3,6 +3,7 @@ import { Tabs } from "expo-router";
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,10 +20,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "home" : "home-outline"}
-              color={color}
-            />
+            <TabBarIcon name="home" color={color} />
           ),
         }}
       />
@@ -31,10 +29,7 @@ export default function TabLayout() {
         options={{
           title: "Fav",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
+            <TabBarIcon name="heart" color={color} />
           ),
         }}
       />
@@ -43,10 +38,7 @@ export default function TabLayout() {
         options={{
           title: "Search",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
+            <TabBarIcon name="search" color={color} />
           ),
         }}
       />
@@ -55,22 +47,10 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
+            <FontAwesome name="user" size={24} color={color} />
           ),
         }}
       />
-      {/* <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      /> */}
     </Tabs>
   );
 }
